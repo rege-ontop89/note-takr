@@ -1,11 +1,11 @@
-import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Colors, FontSizes, Spacing, Radii } from '../theme/colors';
 
 const tabIcons = {
   home: 'home',
-  library: 'book',
-  settings: 'gear',
+  library: 'library',
+  settings: 'settings',
 } as const;
 
 export default function BottomNavbar({ state, descriptors, navigation }: any) {
@@ -46,7 +46,7 @@ export default function BottomNavbar({ state, descriptors, navigation }: any) {
               onPress={onPress}
               style={styles.tab}
             >
-              <FontAwesome name={iconName} size={36} color={color} />
+              <Ionicons name={iconName} size={22} color={color} />
               <Text style={[styles.label, { color }]}>{label}</Text>
             </Pressable>
           );
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     borderRadius: Radii.xl,
-    paddingVertical: Spacing.xl,
     shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.08,
@@ -82,12 +81,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: Spacing.sm,
-    minHeight: 64,
+    gap: Spacing.xxs,
+    minHeight: 70,
     minWidth: 48,
   },
   label: {
-    fontSize: FontSizes.lg,
+    fontSize: FontSizes.xs,
     fontWeight: '400',
   },
 });
