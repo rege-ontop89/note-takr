@@ -20,10 +20,10 @@ feature/*  ──PR──▶  dev  ──▶  staging  ──▶  main
              (you)       (maintainers only)
 ```
 
-| Branch    | What it is                                 | Rules                                                          |
-| --------- | ------------------------------------------ | -------------------------------------------------------------- |
-| `main`    | Reviewed, released code.                   | Protected. Only maintainers promote `staging` into it.         |
-| `staging` | Pre-release testing.                       | Protected. Only maintainers promote `dev` into it.             |
+| Branch    | What it is                                   | Rules                                                          |
+| --------- | -------------------------------------------- | -------------------------------------------------------------- |
+| `main`    | Reviewed, released code.                     | Protected. Only maintainers promote `staging` into it.         |
+| `staging` | Pre-release testing.                         | Protected. Only maintainers promote `dev` into it.             |
 | `dev`     | Integration branch, and your starting point. | Protected. Changes arrive only through reviewed pull requests. |
 
 All three branches are protected on GitHub: direct pushes are blocked, and a pull request needs an approving review from someone other than its author before it can be merged.
@@ -46,12 +46,12 @@ If you do not have write access to this repository, fork it, then do the same th
 
 Use `type/short-description` in lowercase kebab-case:
 
-| Prefix      | Use for                                        | Example                         |
-| ----------- | ---------------------------------------------- | ------------------------------- |
-| `feature/`  | New screens, flows, or components              | `feature/folder-detail-screen`  |
-| `fix/`      | Bug fixes                                      | `fix/timer-resets-on-rotate`    |
-| `chore/`    | Tooling, config, dependencies, project setup   | `chore/setup-linting`           |
-| `docs/`     | Documentation only                             | `docs/run-instructions`         |
+| Prefix     | Use for                                      | Example                        |
+| ---------- | -------------------------------------------- | ------------------------------ |
+| `feature/` | New screens, flows, or components            | `feature/folder-detail-screen` |
+| `fix/`     | Bug fixes                                    | `fix/timer-resets-on-rotate`   |
+| `chore/`   | Tooling, config, dependencies, project setup | `chore/setup-linting`          |
+| `docs/`    | Documentation only                           | `docs/run-instructions`        |
 
 Keep each branch to one feature. If you find yourself writing "and" in the branch name, it is probably two branches.
 
@@ -151,18 +151,18 @@ These rules apply whichever stack you choose. Where your language has an officia
 
 ### Naming
 
-| What                       | Convention                                   | Good                                             | Bad                               |
-| -------------------------- | -------------------------------------------- | ------------------------------------------------ | --------------------------------- |
-| Components, widgets, views | `PascalCase` noun                            | `LectureCard`, `RecordButton`, `FolderList`      | `card2`, `MyComponent`, `Stuff`   |
-| Screens                    | `PascalCase`, ends in `Screen`               | `FolderDetailScreen`                             | `Folder2`, `Page3`                |
-| Types and models           | `PascalCase` singular noun                   | `Lecture`, `Folder`, `TranscriptSegment`         | `lectures`, `IData`, `Obj`        |
-| Variables and functions    | `camelCase` (or your language's convention)  | `recordingDuration`, `formatDuration()`          | `rd`, `x`, `temp`, `data2`        |
-| Booleans                   | `is`, `has`, `can`, `should` prefix          | `isRecording`, `hasTranscript`, `canDelete`      | `recording`, `flag`, `status`     |
-| Event handlers             | `handle` + event inside, `on` + event as prop | `handleStopPress` passed as `onStopPress`       | `click`, `doIt`, `fn`             |
-| Functions                  | start with a verb                            | `createFolder()`, `getLecturesByFolder()`        | `folder()`, `lectureStuff()`      |
-| Collections                | plural                                       | `lectures`, `folderIds`                          | `lectureList2`, `arr`             |
-| Constants                  | `UPPER_SNAKE_CASE` (or language convention)  | `MAX_FOLDER_NAME_LENGTH`                         | `max`, `n`                        |
-| Files                      | follow your stack's convention consistently  | `LectureCard.tsx`, `lecture_card.dart`, `LectureCard.swift` | mixed styles in one project |
+| What                       | Convention                                    | Good                                                        | Bad                             |
+| -------------------------- | --------------------------------------------- | ----------------------------------------------------------- | ------------------------------- |
+| Components, widgets, views | `PascalCase` noun                             | `LectureCard`, `RecordButton`, `FolderList`                 | `card2`, `MyComponent`, `Stuff` |
+| Screens                    | `PascalCase`, ends in `Screen`                | `FolderDetailScreen`                                        | `Folder2`, `Page3`              |
+| Types and models           | `PascalCase` singular noun                    | `Lecture`, `Folder`, `TranscriptSegment`                    | `lectures`, `IData`, `Obj`      |
+| Variables and functions    | `camelCase` (or your language's convention)   | `recordingDuration`, `formatDuration()`                     | `rd`, `x`, `temp`, `data2`      |
+| Booleans                   | `is`, `has`, `can`, `should` prefix           | `isRecording`, `hasTranscript`, `canDelete`                 | `recording`, `flag`, `status`   |
+| Event handlers             | `handle` + event inside, `on` + event as prop | `handleStopPress` passed as `onStopPress`                   | `click`, `doIt`, `fn`           |
+| Functions                  | start with a verb                             | `createFolder()`, `getLecturesByFolder()`                   | `folder()`, `lectureStuff()`    |
+| Collections                | plural                                        | `lectures`, `folderIds`                                     | `lectureList2`, `arr`           |
+| Constants                  | `UPPER_SNAKE_CASE` (or language convention)   | `MAX_FOLDER_NAME_LENGTH`                                    | `max`, `n`                      |
+| Files                      | follow your stack's convention consistently   | `LectureCard.tsx`, `lecture_card.dart`, `LectureCard.swift` | mixed styles in one project     |
 
 General naming rules:
 

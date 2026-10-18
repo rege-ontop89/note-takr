@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { Colors } from '../theme/colors';
+import { Colors, FontSizes, IconSizes, Radii, Spacing } from '../theme/colors';
 import { Lecture } from '../types';
 
 type LectureCardProps = {
@@ -9,10 +9,7 @@ type LectureCardProps = {
   onPress: () => void;
 };
 
-export default function LectureCard({
-  lecture,
-  onPress,
-}: LectureCardProps) {
+export default function LectureCard({ lecture, onPress }: LectureCardProps) {
   return (
     <TouchableOpacity
       style={styles.card}
@@ -22,11 +19,7 @@ export default function LectureCard({
       accessibilityLabel={`Open ${lecture.title}`}
     >
       <View style={styles.iconContainer}>
-        <Ionicons
-          name="mic-outline"
-          size={22}
-          color={Colors.text}
-        />
+        <Ionicons name="mic-outline" size={IconSizes.lg} color={Colors.text} />
       </View>
 
       <View style={styles.content}>
@@ -34,20 +27,14 @@ export default function LectureCard({
           {lecture.title}
         </Text>
 
-        <Text style={styles.course}>
-          {lecture.course}
-        </Text>
+        <Text style={styles.course}>{lecture.course}</Text>
 
         <View style={styles.details}>
-          <Text style={styles.detailText}>
-            {lecture.date}
-          </Text>
+          <Text style={styles.detailText}>{lecture.date}</Text>
 
           <View style={styles.dot} />
 
-          <Text style={styles.detailText}>
-            {lecture.duration}
-          </Text>
+          <Text style={styles.detailText}>{lecture.duration}</Text>
 
           {lecture.hasTranscript && (
             <>
@@ -55,7 +42,7 @@ export default function LectureCard({
 
               <Ionicons
                 name="document-text-outline"
-                size={14}
+                size={IconSizes.sm}
                 color={Colors.textSecondary}
               />
             </>
@@ -64,11 +51,7 @@ export default function LectureCard({
       </View>
 
       {lecture.isFavorite && (
-        <Ionicons
-          name="star"
-          size={17}
-          color={Colors.coral}
-        />
+        <Ionicons name="star" size={IconSizes.sm} color={Colors.coral} />
       )}
     </TouchableOpacity>
   );
@@ -81,19 +64,19 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
     borderWidth: 1,
     borderColor: Colors.border,
-    borderRadius: 18,
-    padding: 14,
-    marginBottom: 12,
+    borderRadius: Radii.lg,
+    padding: Spacing.sm + Spacing.xxs / 2,
+    marginBottom: Spacing.sm,
   },
 
   iconContainer: {
     width: 46,
     height: 46,
-    borderRadius: 14,
+    borderRadius: Radii.md,
     backgroundColor: Colors.lavender,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 12,
+    marginRight: Spacing.sm,
   },
 
   content: {
@@ -101,33 +84,33 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 15,
+    fontSize: FontSizes.md - 1,
     fontWeight: '700',
     color: Colors.text,
   },
 
   course: {
-    marginTop: 4,
-    fontSize: 13,
+    marginTop: Spacing.xxs,
+    fontSize: FontSizes.sm - 1,
     color: Colors.textSecondary,
   },
 
   details: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 7,
+    marginTop: Spacing.xs - 1,
   },
 
   detailText: {
-    fontSize: 11,
+    fontSize: FontSizes.xs - 1,
     color: Colors.textMuted,
   },
 
   dot: {
     width: 3,
     height: 3,
-    borderRadius: 2,
+    borderRadius: Radii.sm / 4,
     backgroundColor: Colors.textMuted,
-    marginHorizontal: 6,
+    marginHorizontal: Spacing.xxs + 2,
   },
 });

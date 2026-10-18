@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import { Colors } from '../theme/colors';
+import { Colors, FontSizes, IconSizes, Radii, Spacing } from '../theme/colors';
 
 type FolderCardProps = {
   name: string;
@@ -25,7 +25,7 @@ export default function FolderCard({
       <View style={styles.iconContainer}>
         <Ionicons
           name="folder-outline"
-          size={21}
+          size={IconSizes.md}
           color={Colors.text}
         />
       </View>
@@ -42,7 +42,7 @@ export default function FolderCard({
 
       <Ionicons
         name="chevron-forward"
-        size={18}
+        size={IconSizes.sm}
         color={Colors.textMuted}
       />
     </TouchableOpacity>
@@ -56,20 +56,20 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
     borderWidth: 1,
     borderColor: Colors.border,
-    borderRadius: 18,
-    padding: 14,
-    marginRight: 12,
+    borderRadius: Radii.lg,
+    padding: Spacing.sm,
+    marginRight: Spacing.sm,
     width: 190,
   },
 
   iconContainer: {
-    width: 42,
-    height: 42,
-    borderRadius: 13,
+    width: 44,
+    height: 44,
+    borderRadius: Radii.md,
     backgroundColor: Colors.coralLight,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 10,
+    marginRight: Spacing.xs,
   },
 
   content: {
@@ -77,14 +77,14 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: 14,
+    fontSize: FontSizes.sm,
     fontWeight: '700',
     color: Colors.text,
   },
 
   count: {
-    marginTop: 4,
-    fontSize: 11,
+    marginTop: Spacing.xxs,
+    fontSize: FontSizes.xs,
     color: Colors.textSecondary,
   },
 });

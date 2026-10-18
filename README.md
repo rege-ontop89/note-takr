@@ -96,11 +96,11 @@ Whatever you pick, you must:
 
 This repository has three long-lived branches:
 
-| Branch    | Purpose                                                                 | Who updates it         |
-| --------- | ----------------------------------------------------------------------- | ---------------------- |
-| `main`    | Reviewed, released code.                                                | Maintainers only       |
-| `staging` | Pre-release testing. Promoted from `dev`.                               | Maintainers only       |
-| `dev`     | Integration branch. Every feature branch starts here and returns here.  | Maintainers merge PRs  |
+| Branch    | Purpose                                                                | Who updates it        |
+| --------- | ---------------------------------------------------------------------- | --------------------- |
+| `main`    | Reviewed, released code.                                               | Maintainers only      |
+| `staging` | Pre-release testing. Promoted from `dev`.                              | Maintainers only      |
+| `dev`     | Integration branch. Every feature branch starts here and returns here. | Maintainers merge PRs |
 
 The rules:
 

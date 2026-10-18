@@ -9,3 +9,9 @@ export type Lecture = {
   folder: string;
   transcript: string;
 };
+
+export type FolderSummary = {
+  id: string;
+  name: string;
+  lectureCount: number;
+};

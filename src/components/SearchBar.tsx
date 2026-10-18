@@ -1,26 +1,19 @@
-import {
-  StyleSheet,
-  TextInput,
-  View,
-} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, TextInput, View } from 'react-native';
 
-import { Colors } from '../theme/colors';
+import { Colors, FontSizes, IconSizes, Radii, Spacing } from '../theme/colors';
 
 type SearchBarProps = {
   value: string;
   onChangeText: (text: string) => void;
 };
 
-export default function SearchBar({
-  value,
-  onChangeText,
-}: SearchBarProps) {
+export default function SearchBar({ value, onChangeText }: SearchBarProps) {
   return (
     <View style={styles.container}>
       <Ionicons
         name="search-outline"
-        size={20}
+        size={IconSizes.md}
         color={Colors.textSecondary}
       />
 
@@ -45,14 +38,14 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
     borderWidth: 1,
     borderColor: Colors.border,
-    borderRadius: 16,
-    paddingHorizontal: 15,
+    borderRadius: Radii.lg,
+    paddingHorizontal: Spacing.sm + Spacing.xxs - 1,
   },
 
   input: {
     flex: 1,
-    marginLeft: 10,
-    fontSize: 14,
+    marginLeft: Spacing.xs + 2,
+    fontSize: FontSizes.sm,
     color: Colors.text,
   },
 });

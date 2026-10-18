@@ -1,7 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 
-import { Colors } from '../theme/colors';
-
+import { Colors, Radii, SkeletonSizes, Spacing } from '../theme/colors';
 export default function LectureCardSkeleton() {
   return (
     <View style={styles.card}>
@@ -27,56 +26,56 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
     borderWidth: 1,
     borderColor: Colors.border,
-    borderRadius: 18,
-    padding: 14,
-    marginBottom: 12,
+    borderRadius: Radii.lg,
+    padding: Spacing.sm + Spacing.xxs / 2,
+    marginBottom: Spacing.sm,
   },
 
   icon: {
     width: 46,
     height: 46,
-    borderRadius: 14,
+    borderRadius: Radii.md,
     backgroundColor: Colors.lavender,
     opacity: 0.7,
   },
 
   content: {
     flex: 1,
-    marginLeft: 12,
+    marginLeft: Spacing.sm,
   },
 
   title: {
     width: '72%',
     height: 13,
-    borderRadius: 6,
+    borderRadius: Radii.sm - 2,
     backgroundColor: Colors.border,
   },
 
   course: {
     width: '35%',
     height: 10,
-    borderRadius: 5,
+    borderRadius: Radii.sm - 3,
     backgroundColor: Colors.border,
-    marginTop: 8,
+    marginTop: Spacing.xs,
   },
 
   details: {
     flexDirection: 'row',
-    marginTop: 9,
-    gap: 7,
+    marginTop: Spacing.xs + 1,
+    gap: Spacing.xxs + 3,
   },
 
   detail: {
-    width: 42,
+    width: SkeletonSizes.detail,
     height: 8,
-    borderRadius: 4,
+    borderRadius: Radii.sm / 2,
     backgroundColor: Colors.border,
   },
 
   detailSmall: {
-    width: 30,
+    width: SkeletonSizes.detailSmall,
     height: 8,
-    borderRadius: 4,
+    borderRadius: Radii.sm / 2,
     backgroundColor: Colors.border,
   },
 });
